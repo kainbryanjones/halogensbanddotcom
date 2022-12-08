@@ -1,0 +1,135 @@
+ /* Style inputs, select elements and textareas */
+ input[type=text],
+ input[type=email],
+ input[type=number],
+ select,
+ textarea {
+     width: 100%;
+     padding: 12px;
+     border: 1px solid white;
+     border-radius: 4px;
+     box-sizing: border-box;
+     resize: none;
+     background-color: black;
+     color: white;
+ }
+
+ ::placeholder {
+     /* Chrome, Firefox, Opera, Safari 10.1+ */
+     color: lightgray;
+     opacity: 1;
+     /* Firefox */
+ }
+
+ :-ms-input-placeholder {
+     /* Internet Explorer 10-11 */
+     color: lightgray;
+ }
+
+ ::-ms-input-placeholder {
+     /* Microsoft Edge */
+     color: lightgray;
+ }
+
+
+
+ /* Chrome, Safari, Edge, Opera */
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+ }
+
+ /* Firefox */
+ input[type=number] {
+     -moz-appearance: textfield;
+ }
+
+ /* Style the label to display next to the inputs */
+ label {
+     padding: 12px 12px 12px 0;
+     display: inline-block;
+ }
+
+ /* Style the submit button */
+ input[type=submit] {
+     background-color: black;
+     color: white;
+     padding: 12px 20px;
+     -webkit-border-radius: 5px;
+     border-radius: 5px;
+     cursor: pointer;
+     border: 1px solid white;
+ }
+
+ input[type=submit]:disabled {
+     color: gray;
+     cursor: not-allowed;
+
+ }
+
+ /* Style the container */
+ .form-container {
+     border-radius: 5px;
+     padding: 20px;
+     overflow: hidden;
+     margin: auto;
+     color: white;
+     background-color: black;
+     font-family: 'Courier New', Courier, monospace;
+ }
+
+ /* Floating column for labels: 25% width */
+ .col-25 {
+     float: left;
+     width: 25%;
+     margin-top: 6px;
+ }
+
+ /* Floating column for inputs: 75% width */
+ .col-75 {
+     float: left;
+     width: 75%;
+     margin-top: 6px;
+ }
+
+ /* Clear floats after the columns */
+ .row:after {
+     content: "";
+     display: table;
+     clear: both;
+ }
+
+ fieldset {
+     margin: 0.5%;
+     border: solid;
+     border-color: gray;
+     border-width: 1px;
+ }
+
+ output {}
+
+ /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+ @media screen and (max-width: 600px) {
+
+     .col-25,
+     .col-75,
+     input[type=submit] {
+         width: 100%;
+         margin-top: 0;
+     }
+ }
+
+ legend {
+     background-color: #000;
+     color: #fff;
+     padding: 3px 6px;
+ }
+
+ a {
+     color: lightblue;
+ }
+
+ a:hover {
+     filter: brightness(0.75);
+ }

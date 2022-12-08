@@ -1,0 +1,19 @@
+.music-wrapper {
+/*Display stuff*/
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+/*Box model stuff*/
+    margin-top: 1.5%;
+}
+
+.music-title {
+    width: 100%;
+}
+
+.audio-player-visualiser-wrapper {
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}

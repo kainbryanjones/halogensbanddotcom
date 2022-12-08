@@ -1,0 +1,16 @@
+.audio-visualiser{
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #60495A;
+    border-top: none;
+}
+
+audio{
+    width: 100%;
+}
+
+canvas{
+    height: 100%;
+    width: 100%;
+}
