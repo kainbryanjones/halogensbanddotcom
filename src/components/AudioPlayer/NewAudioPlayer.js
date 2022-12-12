@@ -33,7 +33,7 @@ const AudioPlayer = ({ album }) => {
 
     useEffect(() => {
         //Cross browser compatibility audio context setting
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const audioCtx = new webkitAudioContext() || AudioContext();
         setAudioCtx(audioCtx);
 
         return (() => {
