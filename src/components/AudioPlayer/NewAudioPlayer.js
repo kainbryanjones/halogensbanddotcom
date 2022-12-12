@@ -120,7 +120,7 @@ const AudioPlayer = ({ album }) => {
 
     return (
         <div className="audio-player-container">
-            <audio id="audio" preload="auto" ref={audioRef} >
+            <audio id="audio" preload="none" ref={audioRef} >
                 <source name="audioSrc" src={currentTrack.src} />
                 Browser does not support audio.
             </audio>
