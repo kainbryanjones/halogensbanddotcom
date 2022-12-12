@@ -6,9 +6,8 @@ const MusicStore = () => {
     return (
         <div>
             <h1>Music Store</h1>
-            <AlbumPurchaseBanner />
-            <AlbumPurchaseForm />
             <div>
+                Coming soon!
             </div>
         </div>
     )
