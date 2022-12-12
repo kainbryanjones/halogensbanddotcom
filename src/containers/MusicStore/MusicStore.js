@@ -5,7 +5,11 @@ import AlbumPurchaseForm from "../../components/AlbumPurchaseForm/AlbumPurchaseF
 const MusicStore = () => {
     return (
         <div>
-            <h1>Coming Soon!</h1>
+            <h1>Music Store</h1>
+            <AlbumPurchaseBanner />
+            <AlbumPurchaseForm />
+            <div>
+            </div>
         </div>
     )
 }
