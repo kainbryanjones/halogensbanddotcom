@@ -17,6 +17,8 @@ import { fixBlurryCanvas } from "../../utils/Music/Visualiser/Visualiser";
 import { map } from "../../utils/Maths/General/General";
 import { useNavigate } from "react-router-dom";
 
+import audioinitSFX from "../../assets/audio/audioinit.mp3"
+
 const AudioPlayer = ({ album }) => {
 
     //Stores Track object of currently selected track
@@ -32,7 +34,15 @@ const AudioPlayer = ({ album }) => {
     const [mediaElement, setMediaElement] = useState(null);
     const [analyser, setAnalyser] = useState(null);
 
+    const [audioInit, setAudioInit] = useState(false);
+
     const navigate = useNavigate();
+
+    useEffect(()=>{
+        if(audioInit){
+            audioRef.current.load();
+        }
+    },[audioInit])
 
     useEffect(() => {
         //Cross browser compatibility audio context setting
@@ -41,7 +51,7 @@ const AudioPlayer = ({ album }) => {
         if (AudioContext) {
             const audioCtx = new AudioContext;
             setAudioCtx(audioCtx);
-        }else{
+        } else {
             alert("Web audio is not supported on this browser.");
             navigate("/#/home");
         }
@@ -130,15 +140,26 @@ const AudioPlayer = ({ album }) => {
 
     return (
         <div className="audio-player-container">
-            <audio id="audio" preload="none" ref={audioRef} >
-                <source name="audioSrc" src={currentTrack.src} />
+            <audio id="audio" preload="none" ref={audioRef}>
+                <source name="audioSrc" src={audioInit ? currentTrack.src : audioinitSFX} type="audio/mpeg" />
                 Browser does not support audio.
             </audio>
             <AlbumView album={album} currentTrack={currentTrack} onTrackSelect={setCurrentTrack} />
             {audioCtx &&
                 <>
-                    <AudioPlayerInterface audioRef={audioRef} onTrackIncrement={incrementTrack} onLoopChanged={setAlbumWillLoop} albumWillLoop={albumWillLoop} onPlay={resumeContext} />
-                    <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
+                    {audioInit ?
+                        <>
+                            <AudioPlayerInterface audioRef={audioRef} onTrackIncrement={incrementTrack} onLoopChanged={setAlbumWillLoop} albumWillLoop={albumWillLoop} onPlay={resumeContext} />
+                            <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
+                        </> :
+                        <div><button onClick={(e)=>{
+                            e.target.disabled = true;
+                            audioRef.current.play();
+                            setTimeout(()=>{
+                                setAudioInit(true);
+                            },((audioRef.current.duration * 1000) + 500))
+                        }}>Click Me!</button></div>
+                    }
                 </>
             }
         </div>
@@ -322,6 +343,7 @@ const AudioPlayerInterface = ({ audioRef, onTrackIncrement, onLoopChanged, onPla
 
     const handlePlay = () => {
         setPlaying(true);
+        audioRef.current.muted = false;
         onPlay();
     }
 
