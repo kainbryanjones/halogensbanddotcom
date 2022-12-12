@@ -192,7 +192,7 @@ const AlbumPurchaseForm = () => {
 
     return (
         <div style={{ margin: "1.5%" }}>
-                        Alternatively, you can purchase directly through <a href ="https://kunaki.com/sales.asp?PID=PX00ZXRTZZ&pp=1" target="_blank">Kunaki.</a>
+                        Alternatively, you can purchase directly through <a href ="https://kunaki.com/sales.asp?PID=PX00ZXRTZZ&pp=1" target="_blank" rel="noreferrer">Kunaki.</a>
             <div className="form-container">
                 <form onSubmit={(e) => {
                     e.preventDefault();
