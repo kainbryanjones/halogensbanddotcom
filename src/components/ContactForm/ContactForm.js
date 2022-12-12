@@ -102,8 +102,8 @@ const ContactForm = () => {
                         <input /*this input is optional*/ name="order_id" type="text" id="order_id" onChange={handleChange} />
                         <label htmlFor="problemwithorder">
                             <ul>
-                                <li><a href="https://help.printful.com/hc/en-us" target="_blank">Printful Support (Merchandise Orders) </a></li>
-                                <li><a href="https://kunaki.com/answers.htm" target="_blank">Kunaki Support (CD / Vinyl Orders)</a></li>
+                                <li><a href="https://help.printful.com/hc/en-us" target="_blank" rel="noreferrer">Printful Support (Merchandise Orders) </a></li>
+                                <li><a href="https://kunaki.com/answers.htm" target="_blank" rel="noreferrer">Kunaki Support (CD / Vinyl Orders)</a></li>
                                 <li><Link to="/store/tracking">Order Tracking</Link></li>
                             </ul>
                         </label>

@@ -90,7 +90,7 @@ const BlogView = () => {
                     </div>
                 </div>
                 <div style={{ marginTop: "2.5%", minWidth: "100%" }}>
-                    <a href={post && post.url} target="_blank">Click here</a> to leave a comment
+                    <a href={post && post.url} target="_blank" rel="noreferrer">Click here</a> to leave a comment
                 </div>
             </div>
         )
