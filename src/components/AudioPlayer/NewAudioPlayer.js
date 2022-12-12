@@ -38,11 +38,11 @@ const AudioPlayer = ({ album }) => {
 
     const navigate = useNavigate();
 
-    useEffect(()=>{
-        if(audioInit){
+    useEffect(() => {
+        if (audioInit) {
             audioRef.current.load();
         }
-    },[audioInit])
+    }, [audioInit])
 
     useEffect(() => {
         //Cross browser compatibility audio context setting
@@ -152,13 +152,21 @@ const AudioPlayer = ({ album }) => {
                             <AudioPlayerInterface audioRef={audioRef} onTrackIncrement={incrementTrack} onLoopChanged={setAlbumWillLoop} albumWillLoop={albumWillLoop} onPlay={resumeContext} />
                             <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
                         </> :
-                        <div><button onClick={(e)=>{
-                            e.target.disabled = true;
-                            audioRef.current.play();
-                            setTimeout(()=>{
-                                setAudioInit(true);
-                            },((audioRef.current.duration * 1000) + 500))
-                        }}>Click Me!</button></div>
+                        <div><button
+                            onClick={(e) => {
+                                e.target.disabled = true;
+                                audioRef.current.play();
+                                setTimeout(() => {
+                                    setAudioInit(true);
+                                }, ((audioRef.current.duration * 1000) + 500))
+                            }}
+                            onTouchEnd={(e) => {
+                                e.target.disabled = true;
+                                audioRef.current.play();
+                                setTimeout(() => {
+                                    setAudioInit(true);
+                                }, ((audioRef.current.duration * 1000) + 500))
+                            }}>Click Me!</button></div>
                     }
                 </>
             }
