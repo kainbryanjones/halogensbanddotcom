@@ -1,6 +1,6 @@
 .audio-visualiser{
     box-sizing: border-box;
-    width: 100%;
+    width: 97.5%;
     overflow: hidden;
     border: 1px solid #60495A;
     border-top: none;
@@ -13,4 +13,10 @@ audio{
 canvas{
     height: 100%;
     width: 100%;
+}
+
+@media only screen and (max-width: 350px) {
+    .audio-visualiser{
+        width: 100%;
+    }
 }

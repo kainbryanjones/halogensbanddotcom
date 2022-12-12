@@ -76,7 +76,6 @@
      margin: auto;
      color: white;
      background-color: black;
-     font-family: 'Courier New', Courier, monospace;
  }
 
  /* Floating column for labels: 25% width */
@@ -132,4 +131,8 @@
 
  a:hover {
      filter: brightness(0.75);
+ }
+
+ .title h2{
+    text-shadow: none;
  }

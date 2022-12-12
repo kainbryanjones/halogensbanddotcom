@@ -18,6 +18,7 @@ import heroImage from "./assets/img/heroImage.png"
 import HalogensLogo from "./components/HalogensLogo/HalogensLogo"
 import About from './containers/About/About';
 import Music from './containers/Music/Music';
+import Merch from './containers/Merch/Merch';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
       </Routes>
       <div className="App" style={{
         backgroundImage: `url(${meshgrid})`,
-        backgroundPosition: "50% 80%",
+        backgroundPosition: "50% 85%",
       }}>
         <div className="body-content" >
           <Navbar />
@@ -40,6 +41,7 @@ function App() {
             <Route exact path="/music" element={<Music />} />
             <Route exact path='/blog' element={<Blog />} />
             <Route exact path="/store/music" element={<MusicStore />} />
+            <Route exact path="/store/merch" element={<Merch />} />
             <Route exact path="/about" element={<About />} />
             <Route path="/blog/post/:postId" element={<BlogView />} />
             <Route path="/contact" element={<Contact />} />

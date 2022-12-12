@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
 import { fetchManufactureRequest, fetchShippingOptions } from "../../apis/KunakiApi";
 import XMLParser from 'react-xml-parser'
 
@@ -190,6 +192,7 @@ const AlbumPurchaseForm = () => {
 
     return (
         <div style={{ margin: "1.5%" }}>
+                        Alternatively, you can purchase directly through <a href ="https://kunaki.com/sales.asp?PID=PX00ZXRTZZ&pp=1" target="_blank">Kunaki.</a>
             <div className="form-container">
                 <form onSubmit={(e) => {
                     e.preventDefault();

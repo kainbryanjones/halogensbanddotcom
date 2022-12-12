@@ -17,6 +17,7 @@ const Home = () => {
         );
     };
 
+    
     return (
         <div className="home-container">
             <div className="title">
@@ -24,7 +25,7 @@ const Home = () => {
             </div>
             <div className="video-container">
                 <div className="embed-container">
-                    <YoutubeVideo youtubeId={"czHlA0Z1CmY"} />
+                    <YoutubeVideo youtubeId={"5rdvEqnMQYQ"} />
                 </div>
             </div>
         </div>

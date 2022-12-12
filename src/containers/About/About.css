@@ -20,6 +20,7 @@
     justify-content: center;
     flex-direction: row;
     min-width: 100%;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace;
 }
 
 .about {

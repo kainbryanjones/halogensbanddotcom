@@ -6,6 +6,11 @@
     overflow: hidden;
 }
 
+.audio-player-container h1,h2,h3{
+    color: #bfc3ba;
+    text-shadow: 0px 5px 8px black;
+}
+
 .at-bottom{
     border-bottom: none !important;
 }
@@ -70,6 +75,8 @@
     overflow: hidden;
     max-height: 300px;
     padding: 1.5%;
+    width: 95%;
+    border-radius: 15px 15px 0 0;
 }
 
 .album-view-title-container{
@@ -115,6 +122,7 @@
     min-width: 100%;
     background-color: #60495A;
     color: #BFC3BA;
+    border-radius: 15px;
 }
 
 .audio-interface-icon {
@@ -159,6 +167,7 @@
     width: 50%;
     font-size:medium;
     white-space: nowrap;
+    margin-right: 1%;
 }
 
 .prev-next-track {
@@ -183,6 +192,7 @@
     }
     .play-pause{
         width: 10%;
+        border: none;
     }
     .progress{
         justify-content: space-around;
@@ -208,6 +218,18 @@
     .track-view-container{
         min-width: 100%;
         max-height: 50%;
+    }
+  }
+
+  @media only screen and (max-width: 350px) {
+    .album-view-artwork-wrapper img{
+        display: none;
+    }
+    .audio-interface-wrapper{
+        border-radius: 0;
+    }
+    .album-view-container{
+        width: 100%;
     }
   }
 

@@ -3,13 +3,13 @@ import { Image } from "react-bootstrap";
 
 import "./BlogDetail.css"
 
-import blurryLogo from "../../assets/img/blurryLogo.png"
+import defaultBGImage from "../../assets/img/logo.png"
 
 const BlogDetail = ({ post, onSelect, isLarge, isLatestPost }) => {
 
     const containerRef = useRef(null);
 
-    const bgImageSrc = post.images ? post.images[0].url : blurryLogo;
+    const bgImageSrc = post.images ? post.images[0].url : defaultBGImage;
     const published = post ? (new Date(post.published).toLocaleDateString()) : null;
     const labelsCommaSeperated = (post.labels) && post.labels.map((label, index) => {
         if (index === post.labels.length-1)

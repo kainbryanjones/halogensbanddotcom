@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
     color: lightcyan;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Bebas Neue';
 }
 
 .video-container {
@@ -44,7 +44,6 @@
 .home-container h1,
 .home-container h2,
 .home-container h3 {
-    text-shadow: 0px 0px 16px cyan;
 }
 
 .title {
