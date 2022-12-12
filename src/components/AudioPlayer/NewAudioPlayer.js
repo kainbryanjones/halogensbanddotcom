@@ -16,7 +16,6 @@ import "./AudioPlayer.css"
 import { fixBlurryCanvas } from "../../utils/Music/Visualiser/Visualiser";
 import { map } from "../../utils/Maths/General/General";
 
-
 const AudioPlayer = ({ album }) => {
 
     //Stores Track object of currently selected track
@@ -121,7 +120,7 @@ const AudioPlayer = ({ album }) => {
 
     return (
         <div className="audio-player-container">
-            <audio id="audio" preload="metadata" ref={audioRef} >
+            <audio id="audio" preload="auto" ref={audioRef} >
                 <source name="audioSrc" src={currentTrack.src} />
                 Browser does not support audio.
             </audio>
