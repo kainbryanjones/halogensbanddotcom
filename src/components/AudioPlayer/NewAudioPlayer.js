@@ -15,6 +15,7 @@ import "./ProgressBar.css"
 import "./AudioPlayer.css"
 import { fixBlurryCanvas } from "../../utils/Music/Visualiser/Visualiser";
 import { map } from "../../utils/Maths/General/General";
+import { useNavigate } from "react-router-dom";
 
 const AudioPlayer = ({ album }) => {
 
@@ -31,10 +32,19 @@ const AudioPlayer = ({ album }) => {
     const [mediaElement, setMediaElement] = useState(null);
     const [analyser, setAnalyser] = useState(null);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         //Cross browser compatibility audio context setting
-        const audioCtx = new webkitAudioContext() || AudioContext();
-        setAudioCtx(audioCtx);
+        const AudioContext = window.webkitAudioContext || window.AudioContext || false;
+
+        if (AudioContext) {
+            const audioCtx = new AudioContext;
+            setAudioCtx(audioCtx);
+        }else{
+            alert("Web audio is not supported on this browser.");
+            navigate("/#/home");
+        }
 
         return (() => {
             if (audioCtx && audioCtx.state !== "closed") {
@@ -365,7 +375,7 @@ const AudioPlayerInterface = ({ audioRef, onTrackIncrement, onLoopChanged, onPla
         <div ref={audioInterfaceRef} className="audio-interface-wrapper">
             <IconContext.Provider value={{ className: "clickable audio-interface-icon" }}>
                 <div className="play-pause icon-container">
-                    {isPlaying ? <MdPause onTouchEnd={() => { audioRef.current.pause() }} onClick={() => { audioRef.current.pause() }}>Pause</MdPause> : <MdPlayArrow onTouchEnd={()=>{ audioRef.current.play() }} onClick={() => { audioRef.current.play() }}>Play</MdPlayArrow>}
+                    {isPlaying ? <MdPause onTouchEnd={() => { audioRef.current.pause() }} onClick={() => { audioRef.current.pause() }}>Pause</MdPause> : <MdPlayArrow onTouchEnd={() => { audioRef.current.play() }} onClick={() => { audioRef.current.play() }}>Play</MdPlayArrow>}
                 </div>
                 <div className="rewind-fastforward icon-container">
                     <MdFastRewind onClick={() => { incrementCurrentTime(-10) }}>- 10s</MdFastRewind>
