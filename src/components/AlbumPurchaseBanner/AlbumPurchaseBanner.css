@@ -41,7 +41,11 @@
 }
 
 @media only screen and (max-width: 960px) {
-    .image-wrapper h1, h2, h3, h4, h5{
+    .image-wrapper h1, 
+    .image-wrapper h2, 
+    .image-wrapper h3, 
+    .image-wrapper h4, 
+    .image-wrapper h5{
         display: none;
     }
 }
