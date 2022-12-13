@@ -1,10 +1,10 @@
 .music-wrapper {
-/*Display stuff*/
+    /*Display stuff*/
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-/*Box model stuff*/
+    /*Box model stuff*/
     margin-top: 1.5%;
 }
 
@@ -16,4 +16,16 @@
     width: 100%;
     margin-left: 5%;
     margin-right: 5%;
+}
+
+@media only screen and (max-width: 390px) {
+
+    .audio-player-visualiser-wrapper,
+    .music-wrapper {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+
 }
