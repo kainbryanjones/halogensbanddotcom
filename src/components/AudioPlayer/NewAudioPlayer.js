@@ -167,8 +167,12 @@ const AudioPlayer = ({ album }) => {
                     <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
                 </> :
                 <>
-                    <AlbumView album={album} currentTrack={currentTrack} onTrackSelect={() => { }} />
-                    <button className="audioctx-init-button" onClick={createAudioContext} onTouchEnd={createAudioContext}>Click Here To Load Music Player</button>
+                    <button
+                        className="audioctx-init-button"
+                        onClick={createAudioContext}
+                        onTouchEnd={createAudioContext}>
+                        Click Here To Load The Music Player
+                    </button>
                 </>
             }
         </div>
