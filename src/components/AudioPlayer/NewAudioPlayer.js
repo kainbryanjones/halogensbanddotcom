@@ -144,8 +144,14 @@ const AudioPlayer = ({ album }) => {
 
     return (
         <div className="audio-player-container">
-            <audio id="audio" preload="none" ref={audioRef} onPlaying={()=>{console.log("hello")}} >
-                <source name="audioSrc" src={currentTrack.src} type="audio/mpeg"/>
+            <audio id="audio" preload="none" ref={audioRef}
+                onLoadedData={() => {
+                    console.log("onloadeddata")
+                }}
+                onCanPlay={() => {
+                    console.log("oncanplay")
+                }}>
+                <source name="audioSrc" src={currentTrack.src} type="audio/mpeg" />
                 Browser does not support audio.
             </audio>
             {audioCtx ?
