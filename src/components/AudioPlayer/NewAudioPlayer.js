@@ -32,6 +32,8 @@ const AudioPlayer = ({ album }) => {
     const [mediaElement, setMediaElement] = useState(null);
     const [analyser, setAnalyser] = useState(null);
 
+    const [audioIsLoading, setAudioLoading] = useState(false);
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -142,18 +144,23 @@ const AudioPlayer = ({ album }) => {
 
     return (
         <div className="audio-player-container">
-            <audio id="audio" preload="none" ref={audioRef}>
+            <audio id="audio" preload="none" ref={audioRef} onLoadStart={() => {
+                setAudioLoading(true);
+            }} onCanPlay={() => {
+                setAudioLoading(false);
+            }}>
                 <source name="audioSrc" src={currentTrack.src} type="audio/mpeg" />
                 Browser does not support audio.
             </audio>
             {audioCtx ?
                 <>
                     <AlbumView album={album} currentTrack={currentTrack} onTrackSelect={setCurrentTrack} />
+                    {audioIsLoading && <>Loading</>}
                     <AudioPlayerInterface audioRef={audioRef} onTrackIncrement={incrementTrack} onLoopChanged={setAlbumWillLoop} albumWillLoop={albumWillLoop} onPlay={resumeContext} />
                     <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
                 </> :
                 <>
-                    <AlbumView album={album} currentTrack={currentTrack} onTrackSelect={()=>{}} />
+                    <AlbumView album={album} currentTrack={currentTrack} onTrackSelect={() => { }} />
                     <button className="audioctx-init-button" onClick={createAudioContext} onTouchEnd={createAudioContext}>Click Here To Load Music Player</button>
                 </>
             }
