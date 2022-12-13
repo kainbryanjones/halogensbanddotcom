@@ -229,7 +229,7 @@ const AlbumView = ({ album, currentTrack, onTrackSelect }) => {
                 {album.tracks.map(
                     (track) => {
                         return (
-                            <div key={track.title} className="track-detail-wraper">
+                            <div key={track.title} className="track-detail-wrapper">
                                 <div key={track.title} className="track-detail" >
                                     <TrackDetail className={track === currentTrack && "selected"} key={track.title} track={track} />
                                 </div>

@@ -145,6 +145,12 @@
 
 @media only screen and (max-width: 600px) {
   .slider{
-    max-width: 65%;
+    max-width: 70%;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .slider{
+    max-width: 100%;
   }
 }
