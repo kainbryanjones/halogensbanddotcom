@@ -36,15 +36,15 @@ const AudioPlayer = ({ album }) => {
 
     useEffect(() => {
         //Cross browser compatibility audio context setting
-        const AudioContext = window.webkitAudioContext || window.AudioContext || false;
+        // const AudioContext = window.webkitAudioContext || window.AudioContext || false;
 
-        if (AudioContext) {
-            const audioCtx = new AudioContext;
-            setAudioCtx(audioCtx);
-        } else {
-            alert("Web audio is not supported on this browser.");
-            navigate("/#/home");
-        }
+        // if (AudioContext) {
+        //     const audioCtx = new AudioContext;
+        //     setAudioCtx(audioCtx);
+        // } else {
+        //     alert("Web audio is not supported on this browser.");
+        //     navigate("/#/home");
+        // }
 
         return (() => {
             if (audioCtx && audioCtx.state !== "closed") {
@@ -128,17 +128,33 @@ const AudioPlayer = ({ album }) => {
         setCurrentTrack(nextTrack);
     }
 
+    const createAudioContext = () => {
+        const AudioContext = window.webkitAudioContext || window.AudioContext || false;
+
+        if (AudioContext) {
+            const audioCtx = new AudioContext;
+            setAudioCtx(audioCtx);
+        } else {
+            alert("Web audio is not supported on this browser.");
+            navigate("/#/home");
+        }
+    }
+
     return (
         <div className="audio-player-container">
             <audio id="audio" preload="none" ref={audioRef}>
                 <source name="audioSrc" src={currentTrack.src} type="audio/mpeg" />
                 Browser does not support audio.
             </audio>
-            <AlbumView album={album} currentTrack={currentTrack} onTrackSelect={setCurrentTrack} />
-            {audioCtx &&
+            {audioCtx ?
                 <>
+                    <AlbumView album={album} currentTrack={currentTrack} onTrackSelect={setCurrentTrack} />
                     <AudioPlayerInterface audioRef={audioRef} onTrackIncrement={incrementTrack} onLoopChanged={setAlbumWillLoop} albumWillLoop={albumWillLoop} onPlay={resumeContext} />
                     <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
+                </> :
+                <>
+                    <AlbumView album={album} currentTrack={currentTrack} onTrackSelect={()=>{}} />
+                    <button className="audioctx-init-button" onClick={createAudioContext} onTouchEnd={createAudioContext}>Click Here To Load Music Player</button>
                 </>
             }
         </div>
