@@ -144,18 +144,14 @@ const AudioPlayer = ({ album }) => {
 
     return (
         <div className="audio-player-container">
-            <audio id="audio" preload="none" ref={audioRef} onLoadStart={() => {
-                setAudioLoading(true);
-            }} onCanPlay={() => {
-                setAudioLoading(false);
-            }}>
-                <source name="audioSrc" src={currentTrack.src} type="audio/mpeg" />
+            <audio id="audio" preload="none" ref={audioRef} onPlaying={()=>{console.log("hello")}} >
+                <source name="audioSrc" src={currentTrack.src} type="audio/mpeg"/>
                 Browser does not support audio.
             </audio>
             {audioCtx ?
                 <>
                     <AlbumView album={album} currentTrack={currentTrack} onTrackSelect={setCurrentTrack} />
-                    {audioIsLoading && <>Loading</>}
+                    {audioIsLoading && <>Loading...</>}
                     <AudioPlayerInterface audioRef={audioRef} onTrackIncrement={incrementTrack} onLoopChanged={setAlbumWillLoop} albumWillLoop={albumWillLoop} onPlay={resumeContext} />
                     <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
                 </> :
