@@ -87,7 +87,6 @@ const Navbar = () => {
                             <i><IoMdArrowDropdown className="dropdown-icon" /></i>
                         </button>
                         <div ref={dropdownContentRef} className="dropdown-content">
-                            <Link className="link" to={"/store/music"}>Music</Link>
                             <Link className="link" to={"/store/merch"}>Merch</Link>
                         </div>
                     </div>
@@ -99,5 +98,7 @@ const Navbar = () => {
         </div>
     )
 }
+
+//<Link className="link" to={"/store/music"}>Music</Link>
 
 export default Navbar;
