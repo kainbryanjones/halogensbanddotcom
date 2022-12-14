@@ -14,9 +14,9 @@ const getShippingOptionsHTTPString = ({ country, state_province, postalcode }, p
     return HTTPString;
 }
 
-const getRequestManufactureHTTPString = (customerName, addressLine1, addressLine2, city, state, postCode, country, shippingDescription, productId, quantity) => {
+const getRequestManufactureHTTPString = (testmode, customerName, addressLine1, addressLine2, city, state, postCode, country, shippingDescription, productId, quantity) => {
     let mode;
-    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+    if (testmode == true) {
         mode = "Test"
     } else {
         mode = "Live";

@@ -166,14 +166,16 @@ const AudioPlayer = ({ album }) => {
                     <AudioPlayerInterface audioRef={audioRef} onTrackIncrement={incrementTrack} onLoopChanged={setAlbumWillLoop} albumWillLoop={albumWillLoop} onPlay={resumeContext} />
                     <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
                 </> :
-                <>
+                <div>
                     <button
                         className="audioctx-init-button"
                         onClick={createAudioContext}
                         onTouchEnd={createAudioContext}>
                         Click Here To Load The Music Player
                     </button>
-                </>
+                    <br/>
+                    <img className="audio-init-artwork" src={album.artworkUrl} />
+                </div>
             }
         </div>
     )

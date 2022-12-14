@@ -5,15 +5,13 @@ import AlbumPurchaseForm from "../../components/AlbumPurchaseForm/AlbumPurchaseF
 const MusicStore = () => {
     return (
         <div>
-            <h1>Music Store</h1>
+            <h1>Purchase Our Album Below!</h1>
             <div>
-                Coming soon!
+                <AlbumPurchaseBanner />
+                <AlbumPurchaseForm />
             </div>
         </div>
     )
 }
-
-/**<AlbumPurchaseBanner />
-            <AlbumPurchaseForm /> */
 
 export default MusicStore;

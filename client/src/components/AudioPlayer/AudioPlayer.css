@@ -203,6 +203,13 @@
     font-size: xxx-large;
 }
 
+.audio-init-artwork{
+    border-radius: 15px;
+    margin-top: 1.5%;
+    width: 35%;
+    border: 1px solid whitesmoke;
+}
+
 .audioctx-init-button:hover {
     color: lightgray;
 }
@@ -238,6 +245,8 @@
         box-sizing: border-box;
     }
 
+
+
     .album-view-title-container {
         color: lightgray;
         display: inline;
@@ -257,6 +266,7 @@
     .album-view-artwork-wrapper img {
         display: none;
     }
+
     .audio-interface-wrapper {
         display: flex;
         flex-wrap: wrap-reverse;
@@ -266,21 +276,29 @@
         padding-bottom: 1.5%;
         border-radius: 0;
     }
+
     .album-view-container {
         width: 100%;
     }
-    .progress{
+
+    .progress {
         font-size: 0;
         min-width: 100%;
         margin-bottom: 1%;
     }
-    .play-pause{
+
+    .play-pause {
         min-width: 100%;
         margin-top: 1%;
     }
-    .audio-interface-icon{
+
+    .audio-interface-icon {
         min-height: 50px;
         min-width: 100%;
+    }
+
+    .audio-init-artwork{
+        width: 100%;
     }
 
 }

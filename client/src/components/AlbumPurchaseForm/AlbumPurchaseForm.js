@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import {Elements} from '@stripe/react-stripe-js';
-import {loadStripe} from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import {PaymentElement} from '@stripe/react-stripe-js';
+
 import { fetchManufactureRequest, fetchShippingOptions } from "../../apis/KunakiApi";
 import XMLParser from 'react-xml-parser'
 
@@ -14,14 +16,22 @@ const US_STATES = new Array("AA", "AE", "AK", "AL", "AP", "AR", "AZ", "CA", "CO"
 const CANADA_PROVINCES = new Array("AB", "BC", "MB", "NB", "NF", "NS", "NT", "NU", "ON", "PE", "QC", "SK", "YT");
 
 const ALBUM_1_PRODUCTID = process.env.REACT_APP_KUNAKI_ALBUM_1_PRODUCT_ID;
-const ALBUM_1_PRICE =  process.env.REACT_APP_KUNAKI_ALBUM_1_PRICE;
+const ALBUM_1_PRICE = process.env.REACT_APP_KUNAKI_ALBUM_1_PRICE;
+
+const stripePublishableKey = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY;
+const stripePromise = loadStripe(stripePublishableKey);
 
 const AlbumPurchaseForm = () => {
+
+    const stripeOptions = {
+        // passing the client secret obtained from the server
+        clientSecret: '{{CLIENT_SECRET}}'
+    };
 
     //Empty string is better than null for this particular use case.
     //When sending the HTTP request to Kunaki an empty string is treated as NULL
     //whereas null will be treated as a string(i.e. "null")
-    
+
     //Customer contact information
     const [contactInfo, setContactInfo] = useState({
         email: "",
@@ -76,8 +86,8 @@ const AlbumPurchaseForm = () => {
             )
         }
     }, [shippingAddress.country, quantity])
-   
-    
+
+
     /*
     When the shipping options change this useEffects sets the currently
     selected shipping option to the first option in the options.
@@ -91,8 +101,8 @@ const AlbumPurchaseForm = () => {
 
     //Once a response is recieved this use effect is called.
     useEffect(() => {
-        if(orderResponse){
-            
+        if (orderResponse) {
+
         }
     }, [orderResponse]);
 
@@ -103,10 +113,10 @@ const AlbumPurchaseForm = () => {
         if (isFetchingDeliveryOptions) {
             setPossibleShippingOptions([]);
             setSelectedShippingOption(null);
-            submitButtonRef.current.disabled=true;
+            submitButtonRef.current.disabled = true;
             return;
         }
-        submitButtonRef.current.disabled=false;
+        submitButtonRef.current.disabled = false;
     }, [isFetchingDeliveryOptions])
 
 
@@ -192,13 +202,14 @@ const AlbumPurchaseForm = () => {
 
     return (
         <div style={{ margin: "1.5%" }}>
-                        Alternatively, you can purchase directly through <a href ="https://kunaki.com/sales.asp?PID=PX00ZXRTZZ&pp=1" target="_blank" rel="noreferrer">Kunaki.</a>
+            Alternatively, you can purchase directly through <a href="https://kunaki.com/sales.asp?PID=PX00ZXRTZZ&pp=1" target="_blank" rel="noreferrer">Kunaki.</a>
             <div className="form-container">
+            <Elements stripe={stripePromise} options={stripeOptions}>
                 <form onSubmit={(e) => {
                     e.preventDefault();
                     submitButtonRef.current.disabled = true;
                     createOrder();
-               }}>
+                }}>
                     <fieldset>
                         <legend>Order Info</legend>
                         <div className="row">
@@ -335,8 +346,10 @@ const AlbumPurchaseForm = () => {
                             </div>
                         </div>
                     </fieldset>
+                    <PaymentElement />
                     <input type="submit" ref={submitButtonRef} />
                 </form>
+                </Elements>
             </div>
         </div >
     )
