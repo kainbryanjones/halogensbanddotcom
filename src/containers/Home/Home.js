@@ -21,7 +21,7 @@ const Home = () => {
     return (
         <div className="home-container">
             <div className="title">
-                <h1>Debut Album Out Now!</h1>
+                <h1>Debut Album Out December 23rd!</h1>
             </div>
             <div className="video-container">
                 <div className="embed-container">
