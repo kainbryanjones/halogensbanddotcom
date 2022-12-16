@@ -25,7 +25,7 @@ const Home = () => {
             </div>
             <div className="video-container">
                 <div className="embed-container">
-                    <YoutubeVideo youtubeId={"5rdvEqnMQYQ"} />
+                    <YoutubeVideo youtubeId={"DaA84j5iqD0"} />
                 </div>
             </div>
         </div>
