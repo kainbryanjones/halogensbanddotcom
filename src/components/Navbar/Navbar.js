@@ -81,16 +81,6 @@ const Navbar = () => {
                 <Link className="link" to="/home">Home</Link>
                 <Link className="link" to="/music">Music</Link>
                 <Link className="link" to="/blog">Blog</Link>
-                <div onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
-                    <div className="dropdown" ref={dropdownRef}>
-                        <button className="dropbtn">Store
-                            <i><IoMdArrowDropdown className="dropdown-icon" /></i>
-                        </button>
-                        <div ref={dropdownContentRef} className="dropdown-content">
-                            <Link className="link" to={"/store/merch"}>Merch</Link>
-                        </div>
-                    </div>
-                </div>
                 <Link className="link" to={"/about"}>About</Link>
                 <Link className="link" to={"/contact"}>Contact</Link>
                 <Link className="icon"><GiHamburgerMenu /></Link>
@@ -100,5 +90,17 @@ const Navbar = () => {
 }
 
 //<Link className="link" to={"/store/music"}>Music</Link>
+/*
+<div onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+                    <div className="dropdown" ref={dropdownRef}>
+                        <button className="dropbtn">Store
+                            <i><IoMdArrowDropdown className="dropdown-icon" /></i>
+                        </button>
+                        <div ref={dropdownContentRef} className="dropdown-content">
+                            <Link className="link" to={"/store/merch"}>Merch</Link>
+                        </div>
+                    </div>
+                </div>
+*/
 
 export default Navbar;
