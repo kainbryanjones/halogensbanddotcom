@@ -160,8 +160,7 @@ const AudioPlayer = ({ album }) => {
                     {audioIsLoading && <div style={{
                         width: "98%",
                         backgroundColor: "#60495A",
-                        borderBottom: "1px red solid",
-                        borderTop: "1px red solid",
+                        borderBottom: "1px lightgoldenrodyellow solid"
                     }}>Loading...</div>}
                     <AudioPlayerInterface audioRef={audioRef} onTrackIncrement={incrementTrack} onLoopChanged={setAlbumWillLoop} albumWillLoop={albumWillLoop} onPlay={resumeContext} />
                     <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
