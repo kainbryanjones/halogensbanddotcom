@@ -7,7 +7,7 @@ import useDocumentTitle from "../../utils/Hooks/useDocumentTitle";
 
 const Music = () => {
 
-    useDocumentTitle(album1.title))
+    useDocumentTitle(album1.title)
 
     return (
         <div className="music-wrapper">
