@@ -11,6 +11,7 @@ const About = () => {
 
     return (
         <div>
+            <meta>Halogens is a music duo founded in 2022 in Aberystywth, Wales. We make electronic dance music with rock infused!</meta>
             <div className="about-container">
                 <div className="about-content">
                     <HalogensLogo />

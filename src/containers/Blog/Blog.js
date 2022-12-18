@@ -38,6 +38,7 @@ const Blog = () => {
 
     return (
         <div>
+            <meta>Band blog. Here you can find everything from "behind the tracks" to musical and development related tutorials!</meta>
             <h1>Halogens Blog</h1>
             <div className="blog-list-wrapper">
                 {loadingPosts
