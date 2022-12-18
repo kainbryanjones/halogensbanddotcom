@@ -68,7 +68,7 @@ function App() {
             <Route path="/blog/post/:postId" element={<BlogView />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/404" element={<NotFound />} />
-            <Route path="*" element={<>Missing Page / Error Page</>} />
+            <Route path="*" element={<div style={{marginTop:"1.5%"}}>Missing Page / Error Page</div>} />
           </Routes>
         </div>
         <Footer />

@@ -71,6 +71,7 @@
  /* Style the container */
  .form-container {
      border-radius: 5px;
+  border: 1px solid white;
      padding: 20px;
      overflow: hidden;
      margin: auto;
