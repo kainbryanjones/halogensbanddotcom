@@ -19,8 +19,30 @@ import HalogensLogo from "./components/HalogensLogo/HalogensLogo"
 import About from './containers/About/About';
 import Music from './containers/Music/Music';
 import Merch from './containers/Merch/Merch';
+import { useEffect, useState } from 'react';
+
+const fetchSecret = async () => {
+  const response = await fetch('/create-payment-intent');
+  const { client_secret: clientSecret } = await response.json();
+  return clientSecret
+}
 
 function App() {
+
+  const [secret, setSecret] = useState(null);
+
+  useEffect(() => {
+    const fetchaAndSetSecret = async () => {
+      const s = await fetchSecret();
+      setSecret(s);
+    }
+    fetchaAndSetSecret();
+  }, [])
+
+  useEffect(() => {
+      console.log(secret);
+  }, [secret])
+
   return (
     <Router>
       <Routes>
