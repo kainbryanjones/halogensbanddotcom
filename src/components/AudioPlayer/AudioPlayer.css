@@ -208,6 +208,7 @@
     margin-top: 1.5%;
     width: 35%;
     border: 1px solid whitesmoke;
+    cursor: pointer;
 }
 
 .audioctx-init-button:hover {
