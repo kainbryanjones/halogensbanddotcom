@@ -173,7 +173,7 @@ const AudioPlayer = ({ album }) => {
                         Click Here To Load The Music Player
                     </button>
                     <br/>
-                    <img className="audio-init-artwork" src={album.artworkUrl} />
+                    <img onClick={createAudioContext} onTouchEnd={createAudioContext} className="audio-init-artwork" src={album.artworkUrl} />
                 </div>
             }
         </div>
