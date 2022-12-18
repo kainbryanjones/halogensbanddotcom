@@ -3,8 +3,12 @@ import HalogensLogo from "../../components/HalogensLogo/HalogensLogo";
 import about from "../../assets/img/about.jpg"
 
 import "./About.css"
+import useDocumentTitle from "../../utils/Hooks/useDocumentTitle";
 
 const About = () => {
+
+    useDocumentTitle("About");
+
     return (
         <div>
             <div className="about-container">

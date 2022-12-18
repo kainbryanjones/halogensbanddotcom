@@ -3,8 +3,11 @@ import AudioPlayer from "../../components/AudioPlayer/NewAudioPlayer";
 import "./Music.css"
 
 import { album1 } from "../../content/Albums/Album1";
+import useDocumentTitle from "../../utils/Hooks/useDocumentTitle";
 
 const Music = () => {
+
+    useDocumentTitle(album1.title))
 
     return (
         <div className="music-wrapper">

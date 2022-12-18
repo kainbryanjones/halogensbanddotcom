@@ -1,8 +1,11 @@
 import React from "react"
 import Ratio from 'react-bootstrap/Ratio';
+import useDocumentTitle from "../../utils/Hooks/useDocumentTitle";
 import "./Home.css"
 
 const Home = () => {
+
+    useDocumentTitle("Halogens")
 
     /**
      * 

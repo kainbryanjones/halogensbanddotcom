@@ -4,12 +4,15 @@ import { redirect, Route, Routes, useNavigate } from "react-router-dom";
 import { fetchPosts } from "../../apis/BloggerApi"
 import BlogList from "../../components/BlogList/BlogList";
 import BlogView from "../../components/BlogView/BlogView"
+import useDocumentTitle from "../../utils/Hooks/useDocumentTitle";
 import "./Blog.css"
 
 const BLOGGER_API_KEY = process.env.REACT_APP_BLOGGER_API_KEY;
 const BLOGGER_USER_ID = process.env.REACT_APP_BLOGGER_USER_ID;
 
 const Blog = () => {
+
+    useDocumentTitle("Blog");
 
     const [posts, setPosts] = useState([]);
     const [selectedPost, setSelectedPost] = useState(null);
