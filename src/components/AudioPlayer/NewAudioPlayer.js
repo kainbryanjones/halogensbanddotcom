@@ -411,7 +411,7 @@ const AudioPlayerInterface = ({ audioRef, onTrackIncrement, onLoopChanged, onPla
         <div ref={audioInterfaceRef} className="audio-interface-wrapper">
             <IconContext.Provider value={{ className: "clickable audio-interface-icon" }}>
                 <div className="play-pause icon-container">
-                    {isPlaying ? <MdPause onTouchEnd={() => { audioRef.current.pause() }} onClick={() => { audioRef.current.pause() }}>Pause</MdPause> : <MdPlayArrow onTouchEnd={() => { audioRef.current.play() }} onClick={() => { audioRef.current.play() }}>Play</MdPlayArrow>}
+                    {isPlaying ? <MdPause onTouchEnd={(e) => { e.preventDefault(); audioRef.current.pause() }} onClick={(e) => { e.preventDefault(); audioRef.current.pause() }}>Pause</MdPause> : <MdPlayArrow onTouchEnd={(e) => { e.preventDefault(); audioRef.current.play() }} onClick={(e) => { e.preventDefault(); audioRef.current.play() }}>Play</MdPlayArrow>}
                 </div>
                 <div className="rewind-fastforward icon-container">
                     <MdFastRewind onClick={() => { incrementCurrentTime(-10) }}>- 10s</MdFastRewind>
