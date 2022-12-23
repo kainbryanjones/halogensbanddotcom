@@ -172,7 +172,7 @@ const AudioPlayer = ({ album }) => {
                         onTouchEnd={createAudioContext}>
                         Click Here To Load The Music Player
                     </button>
-                    <br/>
+                    <br />
                     <img onClick={createAudioContext} onTouchEnd={createAudioContext} className="audio-init-artwork" src={album.artworkUrl} />
                 </div>
             }
@@ -412,6 +412,11 @@ const AudioPlayerInterface = ({ audioRef, onTrackIncrement, onLoopChanged, onPla
             <IconContext.Provider value={{ className: "clickable audio-interface-icon" }}>
                 <div className="play-pause icon-container">
                     {isPlaying ? <MdPause onTouchEnd={(e) => { e.preventDefault(); audioRef.current.pause() }} onClick={(e) => { e.preventDefault(); audioRef.current.pause() }}>Pause</MdPause> : <MdPlayArrow onTouchEnd={(e) => { e.preventDefault(); audioRef.current.play() }} onClick={(e) => { e.preventDefault(); audioRef.current.play() }}>Play</MdPlayArrow>}
+                    {/*the div "play-pause-time" needs to go at some point. its a temporary solution for something which isn't massivley important
+                    but there's a better way to organise the time and play/pause when the screen changes size */}
+                    <div className="play-pause-time">
+                        {formatTimeFromSeconds(Math.round(currentTime))} / {formatTimeFromSeconds(Math.round(durationTime))}
+                    </div>
                 </div>
                 <div className="rewind-fastforward icon-container">
                     <MdFastRewind onClick={() => { incrementCurrentTime(-10) }}>- 10s</MdFastRewind>

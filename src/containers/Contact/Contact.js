@@ -13,7 +13,6 @@ const Contact = () => {
 
     return (
         <div>
-            <h1>Contact Us</h1>
             <div className="contact-form-wrapper">
                 <ContactForm/>
             </div>
