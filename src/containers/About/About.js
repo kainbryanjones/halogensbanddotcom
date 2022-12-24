@@ -23,7 +23,7 @@ const About = () => {
                     <p>
                         Halogens' debut album "Captain Mercy" is out now and available everywhere.<br />
                         It's a fusion of psychedelic indie rock and synth pop
-                        and it's a fucking banger so check it out.
+                        and it's a banger so check it out.
                     </p>
                     <p>
                         There's more music and more content to come, so be sure to follow our social media.
