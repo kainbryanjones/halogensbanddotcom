@@ -23,11 +23,11 @@ const About = () => {
                     <p>
                         Halogens' debut album "Captain Mercy" is out now and available everywhere.<br />
                         It's a fusion of psychedelic indie rock and synth pop
-                        and it's a fucking banger so check it out.
+                        and it's a banger so check it out.
                     </p>
                     <p>
-                        There's more music and more content to come, so be sure to follow our soical media.
-                        If you want to support us we have a store and patreon available.
+                        There's more music and more content to come, so be sure to follow our social media.
+                        If you'd like to support us we have a <a href="https://www.paypal.me/halogensband" target="_blank">donation link</a> available.
                         We can't wait to release more content so stay tuned! &#128151;
                     </p>
                 </div>
