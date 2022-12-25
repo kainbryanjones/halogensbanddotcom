@@ -1,7 +1,6 @@
-import React from "react"
-import Ratio from 'react-bootstrap/Ratio';
+import React from "react";
 import useDocumentTitle from "../../utils/Hooks/useDocumentTitle";
-import "./Home.css"
+import "./Home.css";
 
 const Home = () => {
 
