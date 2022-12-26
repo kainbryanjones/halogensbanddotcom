@@ -24,3 +24,4 @@ yarn-error.log*
 
 #custom naming convention for old component
 ~OLD*
+*AlbumPurchase*
