@@ -1,72 +1,40 @@
-![alt text](https://i.imgur.com/fB2jixP.png)
+![alt text](https://i.imgur.com/Vdwyb1L.png)
 
-# Getting Started with Create React App
+#Halogens
+This is the source code for www.halogensband.com the website for my band "Halogens". The entire application was written using the React.js framework.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Features
+*Responsive footer with social media links
+*Responsive navbar (mobile friendly)
+*Blog built using Google's Blogger API
+*Custom built web play capable of playing playlsts/albums built using web audio API
+  *Audio frequency/waveform visualiser with unique colours to each track's specification
+  *Custom artwork for each album and single(if artwork is provided unique to each single)
+  *Responsiveness and mobile friendly
+  *Functional on all modern browsers(Firefox, Opera, Chrome, Edge, Safari)
+*About section
+*Contact form built with EmailJs API
 
-## Available Scripts
+#Current Problems With The Website
+*Not very SEO friendly
+  Currently builds client side using React code and thus is not efficient for crawlers and bots
+*Messy CSS
+  While the final result looks rather nice the underlying CSS code can be a bit messy, i.e there are
+  numerous classes with strange names to allow for classes to have modular CSS styles
+*Not scalable(long term)
+  Currently the website lacks a strong backend codebase and will need to have one implemented if I wish to scale it.
+  
+#Solutions To The Current Problems
+Next Js is the framework I am currently learning. It seems to be the solution to all the issues listed above. I intend to host the website
+Vercel from a new Git repository from this one. This repository can be seen as "Phase 1" of halogensband.com and while I am proud of it and I 
+believe it does a solid job at the scope it is working within, I do believe it could be better.
 
-In the project directory, you can run:
+This website was my project to improve my HTML5, CSS, JavaScrip and most importantly React Js and HTTP skills. I believe I have learned a lot from building it,
+but now it is time to start "phase 2". 
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#Features Coming In "Phase 2"
+*MailChimp Email Subscription Component
+*SEO friendly Blog interface with Next Js server side props hooks.
+*Better mobile support for the web player and improved scalable of the web play to perhaps be used by other developers. I'd like to make it open source and
+available to node package manager where musicians/artists/developers can use it and customise without having to worry about the underlying audio code / cross browser compatibility.
+*Better about page which is more like a profile for each person credited on the album or anyone in the future who works with us.
