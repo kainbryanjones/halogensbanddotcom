@@ -165,7 +165,8 @@ const AudioPlayer = ({ album }) => {
                     <AudioPlayerInterface audioRef={audioRef} onTrackIncrement={incrementTrack} onLoopChanged={setAlbumWillLoop} albumWillLoop={albumWillLoop} onPlay={resumeContext} />
                     <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
                 </> :
-                <div>
+                <div style={{
+                }}>
                     <figure style={{
                         cursor: "pointer",
                     }} onClick={createAudioContext} onTouchEnd={createAudioContext}>

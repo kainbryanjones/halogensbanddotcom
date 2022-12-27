@@ -210,7 +210,7 @@
 .audio-init-artwork{
     border-radius: 15px;
     margin-top: 1.5%;
-    width: 35%;
+    width: 75%;
     border: 1px solid whitesmoke;
     cursor: pointer;
 }
@@ -287,7 +287,9 @@
     .album-view-container {
         width: 100%;
     }
-
+    .audio-init-artwork{
+        width: 90%;
+    }
     .progress {
         margin-top: 1.5%;
         min-width: 100%;
