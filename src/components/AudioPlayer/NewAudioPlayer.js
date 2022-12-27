@@ -168,9 +168,10 @@ const AudioPlayer = ({ album }) => {
                 <div>
                     <figure style={{
                         cursor: "pointer",
-                        fontSize: "large"
                     }} onClick={createAudioContext} onTouchEnd={createAudioContext}>
-                        <figcaption>Click Here To Load The Music Player</figcaption>
+                        <figcaption style={{
+                            fontSize: "x-large"
+                        }}>Click Here To Load The Music Player</figcaption>
                         <img className="audio-init-artwork" src={album.artworkUrl} />
                     </figure>
                 </div>
