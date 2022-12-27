@@ -159,8 +159,8 @@ const AudioPlayer = ({ album }) => {
                     <AlbumView album={album} currentTrack={currentTrack} onTrackSelect={setCurrentTrack} />
                     {audioIsLoading && <div style={{
                         width: "98%",
-                        backgroundColor: "#60495A",
-                        borderBottom: "1px lightgoldenrodyellow solid"
+                        backgroundColor: "#2F2235",
+                        borderBottom: "2px lightgoldenrodyellow solid"
                     }}>Loading...</div>}
                     <AudioPlayerInterface audioRef={audioRef} onTrackIncrement={incrementTrack} onLoopChanged={setAlbumWillLoop} albumWillLoop={albumWillLoop} onPlay={resumeContext} />
                     <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
