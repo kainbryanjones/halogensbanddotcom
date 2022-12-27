@@ -8,7 +8,6 @@ import BlogView from './components/BlogView/BlogView';
 import NotFound from './containers/ErrorPage/ErrorPage';
 import Footer from './components/Footer/Footer';
 import Contact from './containers/Contact/Contact';
-import MusicStore from './containers/MusicStore/MusicStore';
 import Home from './containers/Home/Home';
 
 import meshgrid from "./assets/img/meshgrid.jpg"
@@ -62,7 +61,7 @@ function App() {
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/music" element={<Music />} />
             <Route exact path='/blog' element={<Blog />} />
-            <Route exact path="/store/music" element={<MusicStore />} />
+            <Route exact path="/store/music" element={<></>} />
             <Route exact path="/store/merch" element={<Merch />} />
             <Route exact path="/about" element={<About />} />
             <Route path="/blog/post/:postId" element={<BlogView />} />
