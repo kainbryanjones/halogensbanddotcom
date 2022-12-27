@@ -166,14 +166,12 @@ const AudioPlayer = ({ album }) => {
                     <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
                 </> :
                 <div>
-                    <button
-                        className="audioctx-init-button"
-                        onClick={createAudioContext}
-                        onTouchEnd={createAudioContext}>
-                        Click Here To Load The Music Player
-                    </button>
-                    <br />
-                    <img onClick={createAudioContext} onTouchEnd={createAudioContext} className="audio-init-artwork" src={album.artworkUrl} />
+                    <figure style={{
+                        cursor: "pointer"
+                    }} onClick={createAudioContext} onTouchEnd={createAudioContext}>
+                        <img className="audio-init-artwork" src={album.artworkUrl} />
+                        <figcaption>Click Here To Load The Music Player</figcaption>
+                    </figure>
                 </div>
             }
         </div>
