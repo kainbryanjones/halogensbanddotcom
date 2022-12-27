@@ -7,13 +7,13 @@ This is the source code for www.halogensband.com the website for my band "Haloge
 * Responsive footer with social media links
 * Responsive navbar (mobile friendly)
 * Blog built using Google's Blogger API
-* Custom built web play capable of playing playlsts/albums built using web audio API
+* Custom built web audio player capable of playing playlsts/albums built using web audio API(OOP design)
   * Audio frequency/waveform visualiser with unique colours to each track's specification
   * Custom artwork for each album and single(if artwork is provided unique to each single)
   * Responsiveness and mobile friendly
-  * Functional on all modern browsers(Firefox, Opera, Chrome, Edge, Safari)
+  * Functional on all modern browsers(Firefox, Opera, Chrome, Edge, Safari) and devices
 * About section
-* Contact form built with EmailJs API
+* Contact form built using EmailJs API
 
 # Current Problems With The Website
 * Not very SEO friendly
