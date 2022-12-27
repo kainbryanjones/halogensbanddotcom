@@ -16,6 +16,7 @@ import "./AudioPlayer.css"
 import { fixBlurryCanvas } from "../../utils/Music/Visualiser/Visualiser";
 import { map } from "../../utils/Maths/General/General";
 import { useNavigate } from "react-router-dom";
+import detectMob from "../../utils/Device/MobileDetector";
 
 const AudioPlayer = ({ album }) => {
 
@@ -172,7 +173,7 @@ const AudioPlayer = ({ album }) => {
                     }} onClick={createAudioContext} onTouchEnd={createAudioContext}>
                         <figcaption style={{
                             fontSize: "x-large"
-                        }}>{(( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 )) ? "Press" : "Click"} Here To Load The Music Player</figcaption>
+                        }}>{detectMob() ? "Press" : "Click"} Here To Load The Music Player</figcaption>
                         <img className="audio-init-artwork" src={album.artworkUrl} />
                     </figure>
                 </div>
