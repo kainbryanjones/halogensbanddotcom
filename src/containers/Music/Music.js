@@ -12,7 +12,6 @@ const Music = () => {
     return (
         <div className="music-wrapper">
             <div className="music-title">
-                <h1>Listen To The Whole Album Below!</h1>
             </div>
             <div className="audio-player-visualiser-wrapper">
                 <AudioPlayer album={album1} />
