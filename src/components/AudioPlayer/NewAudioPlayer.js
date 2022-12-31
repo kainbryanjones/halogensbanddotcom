@@ -34,6 +34,8 @@ const AudioPlayer = ({ album }) => {
     const [analyser, setAnalyser] = useState(null);
 
     const [audioIsLoading, setAudioLoading] = useState(false);
+    const [percentage, setPercentage] = useState(0);
+
 
     const navigate = useNavigate();
 
@@ -143,26 +145,40 @@ const AudioPlayer = ({ album }) => {
         }
     }
 
+    const AudioLoadingComponent = ({ percentage }) => {
+        return (<>
+            <div style={{
+                width: "98%",
+                backgroundColor: "#2F2235",
+                borderBottom: "0px lightgoldenrodyellow solid"
+            }}>Loading...
+                <div style={{
+                    width: `${percentage}%`,
+                    height: "0px",
+                    borderTop: "2px solid lightgoldenrodyellow"
+                }} />
+            </div>
+        </>)
+    }
+
+
     return (
         <div className="audio-player-container">
             <audio id="audio" preload="auto" ref={audioRef}
-                onLoadStart={() => {
+                onLoadStart={(e) => {
                     setAudioLoading(true);
                 }}
-                onCanPlay={() => {
+                onCanPlayThrough={(e) => {
                     setAudioLoading(false);
-                }}>
+                }}
+            >
                 <source name="audioSrc" src={currentTrack.src} type="audio/mpeg" />
                 Browser does not support audio.
             </audio>
             {audioCtx ?
                 <>
                     <AlbumView album={album} currentTrack={currentTrack} onTrackSelect={setCurrentTrack} />
-                    {audioIsLoading && <div style={{
-                        width: "98%",
-                        backgroundColor: "#2F2235",
-                        borderBottom: "2px lightgoldenrodyellow solid"
-                    }}>Loading...</div>}
+                    {audioIsLoading && <AudioLoadingComponent />}
                     <AudioPlayerInterface audioRef={audioRef} onTrackIncrement={incrementTrack} onLoopChanged={setAlbumWillLoop} albumWillLoop={albumWillLoop} onPlay={resumeContext} />
                     <AudioVisualiser analyser={analyser} spec={currentTrack.visualiserSpec} />
                 </> :
