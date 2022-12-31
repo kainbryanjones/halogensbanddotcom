@@ -20,12 +20,6 @@ import Music from './containers/Music/Music';
 import Merch from './containers/Merch/Merch';
 import { useEffect, useState } from 'react';
 
-const fetchSecret = async () => {
-  const response = await fetch('/create-payment-intent');
-  const { client_secret: clientSecret } = await response.json();
-  return clientSecret
-}
-
 function App() {
 
   return (
