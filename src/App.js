@@ -28,20 +28,6 @@ const fetchSecret = async () => {
 
 function App() {
 
-  const [secret, setSecret] = useState(null);
-
-  useEffect(() => {
-    const fetchaAndSetSecret = async () => {
-      const s = await fetchSecret();
-      setSecret(s);
-    }
-    fetchaAndSetSecret();
-  }, [])
-
-  useEffect(() => {
-      console.log(secret);
-  }, [secret])
-
   return (
     <Router>
       <Routes>
