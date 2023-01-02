@@ -210,7 +210,7 @@
 .audio-init-artwork{
     border-radius: 15px;
     margin-top: 1.5%;
-    width: 75%;
+    width: min(75%,420px);
     border: 1px solid whitesmoke;
     cursor: pointer;
 }
