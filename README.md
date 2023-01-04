@@ -34,7 +34,11 @@ but now it is time to start "phase 2".
 
 # Features Coming In "Phase 2"
 * MailChimp Email Subscription Component
-* SEO friendly Blog interface with Next Js' server-side props hooks.
-* Better mobile support for the web player and improved scalable of the web play to perhaps be used by other developers. I'd like to make it open source and
-available to Node package manager where musicians/artists/developers can use it and customise without having to worry about the underlying audio code/cross-browser compatibility.
-* Better about page which is more like a profile for each person credited on the album or anyone in the future who works with us.
+* All round better SEO
+* Better mobile friendly web player
+* Make the web play more modular and available for download without using this particular git repo
+* More detailed about page with portfolios for different credited people
+* Use SASS
+* Much tidier API masking third party api use in code
+* Adding some plugins available for download (see my github profile)
+* Comment section for blog (built using MERN stack)
