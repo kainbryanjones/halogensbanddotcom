@@ -25,12 +25,7 @@ This is the source code for www.halogensband.com the website for my band "Haloge
   Currently the website lacks a strong backend codebase and will need to have one implemented if I wish to scale it.
   
 # Solutions To The Current Problems
-Next Js is the framework I am currently learning. It seems to be the solution to all the issues listed above. I intend to host the website
-Vercel from a new Git repository from this one. This repository can be seen as "Phase 1" of halogensband.com and while I am proud of it and I 
-believe it does a solid job at the scope it is working within, I do believe it could be better.
-
-This website was my project to improve my HTML5, CSS, JavaScript and most importantly React Js and HTTP skills. I believe I have learned a lot from building it,
-but now it is time to start "phase 2". 
+* Next JS and SASS
 
 # Features Coming In "Phase 2"
 * MailChimp Email Subscription Component
