@@ -32,28 +32,6 @@ function App() {
             <HalogensLogo />
           </HeroImage>} />
       </Routes>
-      <div className="App" style={{
-        backgroundImage: `url(${meshgrid})`,
-        backgroundPosition: "50% 85%",
-      }}>
-        <div className="body-content" >
-          <Navbar />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/home" element={<Home />} />
-            <Route exact path="/music" element={<Music />} />
-            <Route exact path='/blog' element={<Blog />} />
-            <Route exact path="/store/music" element={<></>} />
-            <Route exact path="/store/merch" element={<Merch />} />
-            <Route exact path="/about" element={<About />} />
-            <Route path="/blog/post/:postId" element={<BlogView />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/404" element={<NotFound />} />
-            <Route path="*" element={<div style={{marginTop:"1.5%"}}>Missing Page / Error Page</div>} />
-          </Routes>
-        </div>
-        <Footer />
-      </div>
     </Router>
   );
 }
